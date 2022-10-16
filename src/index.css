@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.block-1{
+.block-1 {
 	background-image: url("./assets/sliderimg-3.webp");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 80vh;
+	height: 90vh;
 	position: relative;
 }
 
-.block-1::after{
+.block-1::after {
 	content: "";
 	position: absolute;
 	background-color: black;
@@ -23,14 +23,16 @@
 	height: 100%;
 	z-index: 0;
 }
-.block-2{
+
+.block-2 {
 	background-image: url("./assets/sliderimg-4.webp");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 90vh;
 }
-.block-2::after{
+
+.block-2::after {
 	content: "";
 	position: absolute;
 	background-color: black;
@@ -42,14 +44,16 @@
 	height: 100%;
 	z-index: 0;
 }
-.block-3{
+
+.block-3 {
 	background-image: url("./assets/sliderimg-2.webp");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 80vh;
+	height: 90vh;
 }
-.block-3::after{
+
+.block-3::after {
 	content: "";
 	position: absolute;
 	background-color: black;
@@ -61,6 +65,7 @@
 	height: 100%;
 	z-index: 0;
 }
+
 .slick-list {
 	overflow: hidden;
 	display: flex;
@@ -104,6 +109,39 @@
 }
 
 
-.active{
+.active {
 	color: white;
+}
+
+
+.gTitle {
+	position: relative;
+
+}
+
+.gTitle::before {
+	content: "";
+	position: absolute;
+	width: 4rem;
+	height: 0.2rem;
+	top: 60px;
+	left: 47.3%;
+	background-color: black;
+}
+
+.iconsBlock {
+	overflow: hidden;
+}
+
+.icons {
+	transform: translateX(130%);
+	transition: all .3s ease-in-out;
+}
+
+.icons:hover .icon{
+   color: white;
+}
+
+.productBlock:hover .icons {
+	transform: translateX(0);
 }
