@@ -25,8 +25,7 @@ const Table = ({ item, idx }) => {
       <td className="py-4 px-6">
         <button
           onClick={() => dispatch(deleteFromCart(item.id))}
-          class="ml-auto bg-white text-gray-400 hover:text-gray-900 rounded-sm  p-1.5 hover:bg-gray-100 inline-flex dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-          data-dismiss-target="#toast-warning"
+          className="ml-auto bg-white text-gray-400 hover:text-gray-900 rounded-sm  p-1.5 hover:bg-gray-100 inline-flex dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
         >
           <DeleteIcon />
         </button>

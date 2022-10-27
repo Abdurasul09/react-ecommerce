@@ -8,23 +8,22 @@ import { decCartItem } from "./../../../redux/actions/Actions";
 const Quantity = ({item}) => {
 	const dispatch = useDispatch();
 	return (
-		<div className="flex items-center">
+		<div className="flex items-center w-[100px]">
           <div className="flex items-center">
             <button
+              onClick={() => dispatch(decCartItem(item.id))}
               className="ml-auto  bg-white text-gray-400 hover:text-gray-900 rounded-sm  p-1 hover:bg-gray-100 inline-flex dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-              data-dismiss-target="#toast-warning"
-              ariaLabel="Close"
+              aria-label="Close"
             >
-              <IncIcon />
+              <DecIcon />
             </button>
             <span className="text-[20px] mx-6">{item.quantity}</span>
             <button
               onClick={() => dispatch(incCartItem(item))}
               className="ml-auto bg-white text-gray-400 hover:text-gray-900 rounded-sm  p-1 hover:bg-gray-100 inline-flex dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-              data-dismiss-target="#toast-warning"
-              ariaLabel="Close"
+              aria-label="Close"
             >
-              <DecIcon />
+              <IncIcon />
             </button>
           </div>
         </div>
