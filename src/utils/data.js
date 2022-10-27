@@ -9,6 +9,7 @@ import jacket from "./../assets/jacket-1.webp";
 export const data = {
 	allProducts: [
     {
+      id:1,
       name: 'Slim Shirt',
       slug: 'slim-shirt',
       category: 'Shirts',
@@ -21,6 +22,7 @@ export const data = {
       description: 'A popular shirt',
     },
     {
+      id:2,
       name: 'Slim Shirt',
       slug: 'slim-shirt',
       category: 'Shirts',
@@ -33,6 +35,7 @@ export const data = {
       description: 'A popular shirt',
     },
     {
+      id:3,
       name: 'Slim Shirt',
       slug: 'slim-shirt',
       category: 'Shirts',
@@ -45,6 +48,7 @@ export const data = {
       description: 'A popular shirt',
     },
     {
+      id:4,
       name: 'Slim Shirt',
       slug: 'slim-shirt',
       category: 'Shirts',
@@ -57,6 +61,7 @@ export const data = {
       description: 'A popular shirt',
     },
     {
+      id:5,
       name: 'Slim Shirt',
       slug: 'slim-shirt',
       category: 'Shirts',
@@ -69,6 +74,7 @@ export const data = {
       description: 'A popular shirt',
     },
     {
+      id:6,
       name: 'Golf Pants',
       slug: 'golf-pants',
       category: 'Pants',
@@ -81,6 +87,7 @@ export const data = {
       description: 'Smart looking pants',
     },
     {
+      id:7,
       name: 'Fit Pants',
       slug: 'fit-pants',
       category: 'Pants',
@@ -93,6 +100,7 @@ export const data = {
       description: 'A popular pants',
     },
     {
+      id:8,
       name: 'Classic Pants',
       slug: 'classic-pants',
       category: 'Pants',

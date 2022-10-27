@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-
+import bannerImg1 from "./../../assets/banner-img-1.jpeg"
 const Hero = () => {
   const settings = {
     dots: false,
@@ -22,6 +22,7 @@ const Hero = () => {
               <h2 className="text-xl text-white uppercase py-2">Ultra Stretch Trouser</h2>
               <button className="bg-white text-gray-900 px-4 py-2">Show Now</button>
             </div>
+            {/* <img src={bannerImg1} alt="banner image"/> */}
           </div>
         </div>
         <div className="block-2">

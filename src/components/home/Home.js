@@ -6,12 +6,9 @@ import { data } from "../../utils/data";
 import Categories from "./categories/Categories";
 import Products from "./products/Products";
 
-
 const Home = () => {
-
   const dispatch = useDispatch();
   const { products } = useSelector((s) => s);
-  console.log(products);
   useEffect(() => {
     dispatch(getProducts(data));
   }, []);
@@ -24,10 +21,8 @@ const Home = () => {
         <Categories />
 
         <div className="flex flex-wrap justify-between items-center">
-          {products.allProducts.map((el, idx) => (
-            <div key={idx}>
-              <Products idx={idx} el={el} />
-            </div>
+          {products.allProducts?.map((el, idx) => (
+            <Products idx={idx} el={el} key={idx}/>
           ))}
         </div>
       </div>

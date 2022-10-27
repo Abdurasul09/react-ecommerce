@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
+import Notification from "./Notification";
+import TableItem from "./table/TableItem";
 
 const Cart = () => {
-	return (
-		<div>Cart</div>
-	)
-}
+	
+  const { cart } = useSelector((s) => s);
 
-export default Cart
+  return (
+		<div>
+			{cart.length === 0 ? (
+				<Notification/>
+			) : (
+				<TableItem/>
+			)}
+		</div>
+	)
+};
+
+export default Cart;

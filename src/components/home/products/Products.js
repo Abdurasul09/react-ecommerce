@@ -1,9 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addCart } from "../../../redux/actions/Actions";
 import { Cart } from "./../../../assets/icons/Icons";
 import { Heart } from "./../../../assets/icons/Icons";
 
 const Products = ({ el, idx }) => {
+  const dispatch = useDispatch();
+  
   return (
     <div>
       <div className="flex relative productBlock">
@@ -19,12 +23,14 @@ const Products = ({ el, idx }) => {
           </div>
         </div>
         <div className="absolute top-48 right-1 iconsBlock">
-          <div className="icons bg-white rounded-full p-2 mb-2 hover:bg-gray-900">
+          <div 
+            onClick={() => dispatch(addCart(el))}
+            className="icons bg-white rounded-full p-2 mb-2 hover:bg-gray-900"
+          >
             <Cart />
           </div>
           <div
-            className="icons bg-white rounded-full p-2 
-                   hover:bg-gray-900"
+            className="icons bg-white rounded-full p-2 hover:bg-gray-900"
           >
             <Heart />
           </div>
