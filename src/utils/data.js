@@ -20,6 +20,7 @@ export const data = {
       numReviews: 10,
       countInStock: 20,
       description: 'A popular shirt',
+      size: {id:1, size:"xl"}
     },
     {
       id:2,

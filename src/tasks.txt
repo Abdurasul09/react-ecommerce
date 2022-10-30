@@ -2,3 +2,7 @@
 - install redux - end;
 - install tailwind - end;
 - install react-router-dom - end;
+
+
+
+  

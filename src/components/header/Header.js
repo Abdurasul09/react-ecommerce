@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
-  const { cart } = useSelector((s) => s);
+
+  const { cart, wishlist } = useSelector((s) => s);
 
   return (
     <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-6 fixed top-0 left-0 right-0 w-full z-50">
@@ -113,24 +114,51 @@ const Header = () => {
             </div>
           )}
 
-          <button
-            type="button"
-            className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none uppercase font-normal"
-          >
-            <svg
-              className="h-7 w-7 text-gray-100 hover:text-gray-100"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          {wishlist.length === 0 ? (
+            <NavLink
+              to="/wishlist"
+              className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none uppercase font-normal"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              />
-            </svg>
-          </button>
+              <svg
+                className="h-7 w-7 text-gray-100 hover:text-gray-100"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </NavLink>
+          ) : (
+            <div className="relative w-[40px] h-[35px]">
+              <div className="absolute ml-6 mt-[1px] text-[10px] w-3.5 h-3.5 bg-indigo-600 rounded-full flex items-center justify-center text-white">
+                {wishlist.length}
+              </div>
+              <NavLink
+                to="/wishlist"
+                type="button"
+                className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none"
+              >
+                <svg
+                  className="h-7 w-7 text-gray-100 hover:text-gray-100"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </NavLink>
+            </div>
+          )}
         </div>
       </div>
     </nav>
