@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import bannerImg1 from "./../../assets/banner-img-1.jpeg"
 const Hero = () => {
   const settings = {
     dots: false,
@@ -13,33 +12,23 @@ const Hero = () => {
   };
 
   return (
-    <div>
+    <div className="mt-20">
       <Slider {...settings}>
         <div className="block-1">
           <div className="flex items-center justify-center h-[36rem]">
-            <div className="z-50">
+            <div className="z-50 text-center pt-[10rem] sm:pt-0">
               <span className="text-sm text-white uppercase py-2">new</span>
-              <h2 className="text-xl text-white uppercase py-2">Ultra Stretch Trouser</h2>
+              <h2 className="text-xl text-white uppercase py-2">Одежда для всей семьи</h2>
               <button className="bg-white text-gray-900 px-4 py-2">Show Now</button>
             </div>
-            {/* <img src={bannerImg1} alt="banner image"/> */}
           </div>
         </div>
         <div className="block-2">
 				<div className="flex items-center justify-center h-[36rem]">
-            <div className="z-50">
+            <div className="z-50 text-center pt-[10rem] sm:pt-0">
               <span className="text-sm text-white uppercase py-2">new</span>
-              <h2 className="text-xl text-white uppercase py-2">Ultra Stretch Trouser</h2>
+              <h2 className="text-xl text-white uppercase py-2">Одежда для всей семьи</h2>
               <button className="bg-white text-gray-900 px-4 py-2">Show Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="block-3">
-				<div className="flex items-center justify-center h-[36rem]">
-            <div className="z-50">
-              <span className="text-sm text-white uppercase py-2">new</span>
-              <h2 className="text-xl text-white uppercase py-2">Ultra Stretch Trouser</h2>
-              <button className="bg-white text-gray-900 px-4 py-3 uppercase font-light text-sm">Show Now</button>
             </div>
           </div>
         </div>

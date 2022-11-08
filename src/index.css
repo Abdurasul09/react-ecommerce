@@ -3,68 +3,21 @@
 @tailwind utilities;
 
 .block-1 {
-	background-image: url("./assets/sliderimg-3.webp");
+	background-image: url("./assets/slider-image-1.jpeg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 90vh;
 	position: relative;
 }
-
-.block-1::after {
-	content: "";
-	position: absolute;
-	background-color: black;
-	opacity: .1;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-}
-
 .block-2 {
-	background-image: url("./assets/sliderimg-4.webp");
+	background-image: url("./assets/slider-img-2.jpeg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 90vh;
 }
 
-.block-2::after {
-	content: "";
-	position: absolute;
-	background-color: black;
-	opacity: .1;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-}
-
-.block-3 {
-	background-image: url("./assets/sliderimg-2.webp");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 90vh;
-}
-
-.block-3::after {
-	content: "";
-	position: absolute;
-	background-color: black;
-	opacity: .1;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-}
 
 .slick-list {
 	overflow: hidden;
@@ -110,7 +63,7 @@
 
 
 .active {
-	color: white;
+	color: #4f46e5;
 }
 
 
@@ -138,10 +91,49 @@
 	transition: all .3s ease-in-out;
 }
 
-.icons:hover .icon{
+.icons:hover .icon {
    color: white;
 }
 
 .productBlock:hover .icons {
 	transform: translateX(0);
+}
+
+/* notification */
+:root {
+  --container-height: 500px;
+  --contaier-width: 400px;
+  --header-height: 200px;
+}
+
+.notification {
+  position: absolute;
+  
+	top: 45rem;
+	left: 40%;
+	right: 0;
+  width: calc(3 * var(--contaier-width) / 4);
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: rgb(233, 81, 81);
+  color: #fff;
+	z-index: 9;
+
+  transition: all .3s ease;
+	transform: translateY(10rem);
+}
+
+
+
+@media (max-width: 576px){
+	.block-1,.block-2{
+		height: 50vh;
+	}
+	.gTitle::before{
+		left: 40%;
+	}
 }

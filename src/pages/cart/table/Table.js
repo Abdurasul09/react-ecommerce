@@ -13,7 +13,7 @@ const Table = ({ item, idx }) => {
         scope="row"
         className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
       >
-        {item.name}
+        {item.category}
       </th>
       <td className="py-4 px-6">
         <img src={item.image} alt={item.name} className="w-24 rounded" />

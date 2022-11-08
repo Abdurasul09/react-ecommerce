@@ -1,21 +1,38 @@
 import {
   ADD_TO_CART,
   ADD_TO_WISHLIST,
+  CHANGE_CURRENCY,
   DECREASE_FROM_CART,
   DELETE_FROM_BASKET,
   DELETE_FROM_WISHLIST,
   GET_PRODUCTS,
+  GET_SINGLE_PRODUCT,
 } from "../types/Types";
 
 const initialValue = {
   products: [],
-  singleProduct: {},
+  singleProduct: [],
   wishlist: [],
-  cart: [],
+  cart: JSON.parse(localStorage.getItem("cart")) || [],
+  currencies: {
+    RUB: 1,
+    USD: 0.016,
+    EUR: 0.020,
+    KGS: 1.3
+  },
+  currencySymbol: {
+    RUB: '₽',
+    USD: "$",
+    EUR: '€',
+    KGS: "с"
+  },
+  defaultCurrency: "RUB",  
 };
 
 const Reducer = (state = initialValue, action) => {
   switch (action.type) {
+    case GET_SINGLE_PRODUCT:
+      return {...state, singleProduct: [action.payload]}
     case GET_PRODUCTS:
       return { ...state, products: action.payload };
     case ADD_TO_CART: {
@@ -44,12 +61,12 @@ const Reducer = (state = initialValue, action) => {
       };
 
     case DECREASE_FROM_CART:
-      const findItem = state.cart?.find((el) => el.id === action.payload);
+      const findItem = state.cart?.find((el) => el.id === action.payload.id);
       if (findItem.quantity > 1) {
         return {
           ...state,
           cart: state.cart.map((el) => {
-            return el.id === action.payload
+            return el.id === action.payload.id
               ? { ...el, quantity: el.quantity - 1 }
               : el;
           }),
@@ -68,6 +85,9 @@ const Reducer = (state = initialValue, action) => {
         ...state,
         wishlist: state.wishlist.filter((el) => el.id !== action.payload.id),
       };
+
+      case CHANGE_CURRENCY:
+        return {...state, defaultCurrency: action.payload}
 
     default:
       return state;

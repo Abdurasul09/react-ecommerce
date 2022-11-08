@@ -33,9 +33,9 @@ const WishlistItem = ({ item }) => {
         </div>
         <div
           onClick={() => dispatch(deleteFromWishlist(item))}
-          className="icons bg-white rounded-full p-2 mb-2 hover:bg-gray-900"
+          className="icons bg-white rounded-full  py-3 mb-2 hover:bg-gray-900"
         >
-          <span className="flex items-center justify-center hover:text-white">X</span>
+          <span className="icon flex items-center justify-center text-sm text-gray-300 cursor-pointer">X</span>
         </div>
       </div>
     </div>
